@@ -8,7 +8,7 @@ public class OneTwoALot {
     System.out.println("Enter number");
     int number = scanner.nextInt();
 
-    if (number < 0){
+    if (number <= 0){
         System.out.println("Not enough");
     }
 
