@@ -1,30 +1,18 @@
-import com.sun.org.apache.bcel.internal.generic.GOTO;
-
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class ToTheCenter {
+public class CenteredSquare {
+
     public static void mainDraw(Graphics graphics) {
-        // and draws a line from that point to the center of the canvas.
-        // Draw 3 lines with that function. Use loop for that.
+        // Draw a green 10x10 square to the canvas' center.
+        for (int square = 0; )
 
-        // Create a line drawing function that takes 3 parameters:
-        for (int i = 0; i < 3; i++) {
-            drawLineToCenter(i*40, i*20, graphics);
 
-        }
 
     }
-    public static void drawLineToCenter (int x, int y, Graphics graphics){
-        graphics.drawLine(x, y, WIDTH/2, HEIGHT/2 );
-
-    }
-
-
-
 
     // Don't touch the code below
     static int WIDTH = 320;
