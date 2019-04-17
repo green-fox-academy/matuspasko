@@ -15,6 +15,7 @@ public class FunctionPractive {
         System.out.println(getAverege(input));
         //The print resoult:
         // 25
+        // Print average
 
     }
 
