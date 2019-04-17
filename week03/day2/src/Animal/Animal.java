@@ -2,19 +2,33 @@
 package Animal;
 
 public class Animal {
-    int hunger = 50;
-    int thirsty = 50;
+    int hunger;
+    int thirst;
 
-    public void eat() {
-        hunger--;
+
+    public Animal(int hunger, int thirst){
+        this.hunger = hunger;
+        this.thirst = thirst;
     }
 
-    public void drink() {
-        thirsty--;
+    public Animal(){
+        this.thirst = 50;
+        this.hunger = 50;
     }
 
-    public void play() {
-        hunger++;
-        thirsty++;
+    public void eat(){
+        this.hunger--;
     }
+
+    public  void drin(){
+        this.thirst--;
+    }
+    public void play(){
+        this.thirst++;
+        this.hunger++;
+    }
+    public void print(){
+
+    }
+
 }

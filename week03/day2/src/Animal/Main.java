@@ -2,24 +2,15 @@ package Animal;
 
 public class Main {
     public static void main(String[] args) {
+        Animal dog = new Animal(45, 33);
+        Animal cat = new Animal();
 
-        // start of testing
-        Animal monkey = new Animal();
-        Animal elephant = new Animal();
+        System.out.println("dog value:" + dog.hunger);
+        System.out.println(cat.thirst);
 
-        System.out.println(monkey.hunger);
-        System.out.println(elephant.thirsty);
+        dog.eat();
+        dog.drin();
 
-        monkey.eat();
-        elephant.drink();
 
-        System.out.println(monkey.hunger);
-        System.out.println(elephant.thirsty);
-
-        monkey.play();
-
-        System.out.println(monkey.hunger);
-        System.out.println(monkey.thirsty);
-        //end of testing
     }
 }
