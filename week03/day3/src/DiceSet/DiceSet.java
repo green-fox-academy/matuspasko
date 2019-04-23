@@ -43,16 +43,14 @@ public class DiceSet {
 
         diceSet.roll();
 
-        for (int i = 0; i < 6 ; i++) {
-            while (diceSet.getCurrent(i) != 6){
+        for (int i = 0; i < 6; i++) {
+            while (diceSet.getCurrent(i) != 6) {
                 diceSet.reroll(i);
             }
 
         }
 
-
-
-       // DiceSet diceSet = new DiceSet();
+        // DiceSet diceSet = new DiceSet();
         System.out.println(diceSet.getCurrent());
 //        System.out.println(diceSet.roll());
 //        System.out.println(diceSet.getCurrent());
