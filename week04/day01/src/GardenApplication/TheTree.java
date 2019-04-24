@@ -1,4 +1,4 @@
 package GardenApplication;
 
-public class Main {
+public class TheTree {
 }
