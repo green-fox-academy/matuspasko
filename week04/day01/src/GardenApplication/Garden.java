@@ -1,27 +1,54 @@
 package GardenApplication;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Garden {
-    ArrayList flowers;
-    ArrayList trees;
-    int amountOfWaterGardenHold;
+    List<Plant> plants;
 
-    public TheGarden() {
-    }
+    int howManyPlantsNeedsWatering = 0;
 
-    public TheGarden(ArrayList flowers, ArrayList trees, int amountOfWaterGardenHold) {
-        this.trees = trees;
-        this.flowers = flowers;
-        this.amountOfWaterGardenHold = amountOfWaterGardenHold;
-    }
-    public ArrayList addFlower(TheFlower aFlower) {
-        flowers.add(aFlower);
-        return flowers;
-    }
-    public ArrayList addTree(TheTree aTree){
-        trees.add(aTree);
-        return trees;
+
+    public Garden() {
+        this.plants = new ArrayList<>();
     }
 
+    public void addPlantToGarden(Plant inputPlant) {
+        this.plants.add(inputPlant);
+    }
+
+    public int countPlantsNeedingWatering() {
+        for (Plant inspectedPlant : plants) {
+            inspectedPlant.setNeedWatering();
+            if (inspectedPlant.needWatering) {
+                howManyPlantsNeedsWatering++;
+            }
+        }
+        return howManyPlantsNeedsWatering;
+    }
+
+    public void wateringOfPlantsInGarden(double wateringAmount) {
+        System.out.println("Watering with " + wateringAmount);
+
+        double amountOfWaterForOnePlant = wateringAmount / countPlantsNeedingWatering();
+        for (Plant wateredPlant : plants) {
+            if (wateredPlant.needWatering) {
+                wateredPlant.wateringPlant(amountOfWaterForOnePlant);
+            }
+        }
+        checkTheStatusOfGarden();
+        howManyPlantsNeedsWatering = 0;
+    }
+
+    public void checkTheStatusOfGarden() {
+        for (Plant inspectedPlant : plants) {
+            inspectedPlant.setNeedWatering();
+            if (inspectedPlant.needWatering) {
+                System.out.println("The" + inspectedPlant.color + " " + inspectedPlant.type + " needs water");
+            } else {
+                System.out.println("The" + inspectedPlant.color + " " + inspectedPlant.type + " doesnt need water");
+            }
+        }
+    }
 }
