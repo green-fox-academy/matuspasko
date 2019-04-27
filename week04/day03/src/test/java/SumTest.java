@@ -10,15 +10,11 @@ public class SumTest {
     @Test
     public void Sum_test_list_of_arrays(){
         List<Integer>integerList = new ArrayList<>();
+        Sum sum = new Sum(integerList);
 
-        List<Integer> result = integerList();
-
-
-
-        assertEquals(integerList, result);
+        assertEquals(integerList, sum.inputNumbers);
     }
 
-    @Test
     public void Sum_test_empty_elements(){
         List<Integer>emptyList = new ArrayList<>();
 
