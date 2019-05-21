@@ -16,7 +16,7 @@ public class ShowController {
     @RequestMapping( path = "/show", method = RequestMethod.GET)
     public String displayAccount(Model model){
         model.addAttribute("account", bankAccount);
-        model.addAttribute("currency","Zebra");
+        model.addAttribute("currency"," Zebra");
         return "index";
     }
 }

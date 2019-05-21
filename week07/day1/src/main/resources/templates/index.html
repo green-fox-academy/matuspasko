@@ -5,9 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <p>Name</p>
+<p>Name</p>
 
-
+<!--// tot je kod na to aby sme int zobrazovali ako double. na konci sme doplnili ${currency}| aby sme za to zobrazili Zebra-->
+<td><span th:text="|*{#numbers.formatDecimal(account.getBalance(), 0, 'COMMA', 2, 'POINT')}${currency}|"></span></td>
 
 </body>
 </html>
