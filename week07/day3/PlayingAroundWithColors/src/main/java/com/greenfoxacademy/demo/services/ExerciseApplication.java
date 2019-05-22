@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ExerciseApplication implements CommandLineRunner {
 
+
+    // tieto @aotowire and @ Qualifered sa daju spravit aj cez  constructor (Martin to tak ma na GitHub)
     @Autowired
     @Qualifier("blue")
     private MyColor color1;
