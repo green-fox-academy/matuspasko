@@ -22,7 +22,7 @@ public class FoxController {
         this.foxes = new ArrayList<>(Arrays.asList(new Fox("Robocop", "iron", "kill")));
     }
 
-    @RequestMapping(path = "/route")
+    @RequestMapping(path = "/")
     public String displayFOx(Model model, @RequestParam(required = false) String name) {
         if (name.equals(foxes.get(0).getName())) {
             model.addAttribute("name", foxes.get(0).getName());

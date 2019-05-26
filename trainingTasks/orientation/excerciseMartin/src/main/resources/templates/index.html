@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/welcome" method="get">
+    First name: <input type="text" name="name1"><br>
+    Last name: <input type="text" name="lastname"><br>
+    <input type="radio" name="addresing" value=" mr. "> Mr<br>
+    <input type="radio" name="addresing" value="mrs."> Mrs<br>
+    <input type="radio" name="addresing" value="other"> Not specified<br>
+    <button type="submit">Send form data!</button>
+</form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${listTable}">
+        <td th:text="${item.getDayOfBirth()}"></td>
+        <td th:text="${item.getDayOfDie()}"></td>
+        <td th:text="${item.getLastName()}"></td>
+        <td th:text="${item.getName()}"></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

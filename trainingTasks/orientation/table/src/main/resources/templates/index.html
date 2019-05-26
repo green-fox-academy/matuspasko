@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Oldest guy is: </h2>
+<table class="table">
+
+    <thead>
+
+    <tr>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Day of Birth</th>
+        <th>Day of Die</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${listTable}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getLastName()}"></td>
+        <td th:text="${item.getDayOfBirth()}"></td>
+        <td th:text="${item.getDayOfDie()}"></td>
+
+
+
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<h2>Youngest guy is:</h2>
+
+<table class="table">
+
+    <thead>
+
+    <tr>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Day of Birth</th>
+        <th>Day of Die</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${tableSearch}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getLastName()}"></td>
+        <td th:text="${item.getDayOfBirth()}"></td>
+        <td th:text="${item.getDayOfDie()}"></td>
+
+
+
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>
