@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -7,7 +7,6 @@
     <title>Title</title>
 </head>
 <body>
-
 <table class="table">
     <thead>
     <tr>
@@ -20,7 +19,7 @@
 
     <tbody>
 
-    <tr th:each="item : ${table}">
+    <tr th:each="item : ${storeSearch}">
         <td th:text="${item.getTypeOfToy()}"></td>
         <td th:text="${item.getColor()}"></td>
         <td th:text="${item.getPrice()} + ' KC'"></td>
@@ -30,13 +29,14 @@
 
     </tbody>
 
-    <form method="get" action="/search">
-      Type to Search  <input type="text" name="search" placeholder=".....">
-        <button type="submit">Search</button>
-    </form>
-
 
 </table>
+
+
+<form method="get" action="/search">
+    <input type="text" name="search" placeholder=".....">
+    <button type="submit">Search</button>
+</form>
 
 
 </body>

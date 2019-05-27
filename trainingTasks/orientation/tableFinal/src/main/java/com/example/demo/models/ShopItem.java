@@ -1,17 +1,17 @@
 package com.example.demo.models;
 
 public class ShopItem {
-    private String typeClothes;
+    private String typeOfToy;
     private String color;
     private int ammount;
     private int price;
 
-    public String getTypeClothes() {
-        return typeClothes;
+    public String getTypeOfToy() {
+        return typeOfToy;
     }
 
-    public void setTypeClothes(String typeClothes) {
-        this.typeClothes = typeClothes;
+    public void setTypeOfToy(String typeOfToy) {
+        this.typeOfToy = typeOfToy;
     }
 
     public String getColor() {
@@ -38,8 +38,8 @@ public class ShopItem {
         this.price = price;
     }
 
-    public ShopItem(String typeClothes, String color, int ammount, int price) {
-        this.typeClothes = typeClothes;
+    public ShopItem(String typeOfToy, String color, int ammount, int price) {
+        this.typeOfToy = typeOfToy;
         this.color = color;
         this.ammount = ammount;
         this.price = price;
