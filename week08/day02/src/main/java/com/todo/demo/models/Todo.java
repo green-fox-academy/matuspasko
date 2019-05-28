@@ -1,6 +1,4 @@
-package com.todos.demo.models;
-
-import com.sun.xml.internal.bind.v2.model.core.ID;
+package com.todo.demo.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
