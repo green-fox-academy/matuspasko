@@ -1,7 +1,7 @@
-package com.todo.demo;
+package com.connection.demo;
 
-import com.todo.demo.models.Todo;
-import com.todo.demo.repository.TodoRepository;
+import com.connection.demo.models.Todo;
+import com.connection.demo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

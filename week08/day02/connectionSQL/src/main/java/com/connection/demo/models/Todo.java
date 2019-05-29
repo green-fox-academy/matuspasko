@@ -1,6 +1,4 @@
-package com.todos.demo.models;
-
-import com.sun.xml.internal.bind.v2.model.core.ID;
+package com.connection.demo.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +7,14 @@ import javax.persistence.Id;
 
 @Entity
 public class Todo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    public Todo(){
+
+    }
     private String title;
     private boolean isUrgent;
     private boolean isDone;
@@ -37,5 +40,31 @@ public class Todo {
         return isDone;
     }
 
+    public Todo(String title) {
+        this.title = title;
+    }
 
+    public Todo(boolean isDone) {
+        this.isDone = isDone;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrgent(boolean urgent) {
+        isUrgent = urgent;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
+    }
+    @Override
+    public String toString (){
+        return title;
+    }
 }
