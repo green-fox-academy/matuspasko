@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/todo")
 @Controller
 
 public class TodoController {
@@ -15,20 +14,20 @@ public class TodoController {
     TodoRepository repo;
 
 
-
     @Autowired
     public TodoController(TodoRepository repo) {
         this.repo = repo;
     }
 
-    @GetMapping(value = {"/","/list"})
+    @GetMapping(value = {"/", "/list"})
     public String list(Model model) {
         model.addAttribute("todos", repo.findAll());
         return "todolist";
     }
+
     @GetMapping("/seed") //to impelement data
     public String seed() {
-        this.repo.save(new Todo("Clean table", true, true ));
+        this.repo.save(new Todo("Clean table", true, true));
         this.repo.save(new Todo("Learn", true, true));
         this.repo.save(new Todo("Work OUT", true, false));
         this.repo.save(new Todo("Do homework", false, false));
@@ -37,9 +36,22 @@ public class TodoController {
         return "todolist";
 
     }
+
     @GetMapping("/{id}/delete")
-    public String delete(@PathVariable long id){
+    public String delete(@PathVariable long id) {
         repo.deleteById(id);
-        return "redirect:/todo/";
+        return "redirect:/";
+    }
+
+    @PostMapping("/add")
+    public String add(@ModelAttribute Todo todo) {
+        repo.save(todo);
+        return "redirect:/";
+    }
+
+    @GetMapping("/add")
+    public String goToAdd(Model model) {
+        model.addAttribute("newTodo", new Todo());
+        return "add";
     }
 }

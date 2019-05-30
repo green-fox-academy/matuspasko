@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<h1>What you want to get DONE?</h1>
+<thead>
+<tr>
+
+
+
+
+
+</tr>
+</thead>
+
+<tr>
+    <br>
+    <form action="/add" th:object="${newTodo}" method="POST">
+        <td></td>
+        <br>
+       Title: <td><input type="text" th:field="*{title}"></td>
+        <br>
+        <br>
+      IS IT URGENT?  <td><input type="checkbox" th:field="*{urgent}" th:value="*{urgent}"></td>
+        <td></td>
+        <td></td>
+        <br>
+        <br>
+        <td><input type="submit" class="btn btn-info" value="Add to ToDo List"></td>
+    </form>
+
+</body>
+</html>
