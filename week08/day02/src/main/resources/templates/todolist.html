@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+
     <meta charset="UTF-8">
     <title>Todos</title>
+
 </head>
 <body>
+<div class="alert alert-dark" role="alert"><h1>Todos for today:</h1></div>
 
-<h1>Todos for today:</h1>
+
 
 <table class="table">
     <thead>
@@ -35,10 +37,12 @@
 
 
     </tbody>
+
     <p><a href="/add" th:method="GET">Add new ToDo</a></p>
 
 
 </table>
-
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
