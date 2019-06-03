@@ -16,7 +16,6 @@ public class PostsService {
     }
 
 
-
     public List<Posts> getPostsList() {
         return postsList;
     }

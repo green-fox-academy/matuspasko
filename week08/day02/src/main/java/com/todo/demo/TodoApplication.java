@@ -11,11 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TodoApplication implements CommandLineRunner {
 
 
-    @Autowired
-    TodoRepository todoRepository;
+   // @Autowired
+  //  TodoRepository todoRepository;
 
     public void run(String... args) {
-        todoRepository.save(new Todo("I have to learn Object Relational Mapping"));
+      //  todoRepository.save(new Todo("I have to learn Object Relational Mapping"));
     }
 
     public static void main(String[] args) {

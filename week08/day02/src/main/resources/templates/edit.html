@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-     <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
-
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
 <br>
 <h1>What you want to get DONE?</h1>
 <thead>
@@ -16,18 +15,19 @@
 
 <tr>
     <br>
-    <form action="/add" th:object="${newTodo}" method="POST">
+    <form action="/edit" th:object="${todo}" method="POST">
         <td></td>
         <br>
-       Title: <td><input type="text" th:field="*{title}"></td>
+        Title: <td><input type="text" th:field="*{title}"></td>
         <br>
         <br>
-      IS IT URGENT?  <td><input type="checkbox" th:field="*{urgent}" th:value="*{urgent}"></td>
+        IS IT URGENT?  <td><input type="checkbox" th:field="*{urgent}" ></td>
         <td></td>
         <td></td>
         <br>
         <br>
         <td><input type="submit" class="btn btn-info" value="Add to ToDo List"></td>
+        <input type="hidden" th:field="*{id}">
     </form>
 
 </body>

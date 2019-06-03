@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.jws.WebParam;
+import java.util.List;
+
 @Controller
 
 public class TodoController {
@@ -54,4 +57,29 @@ public class TodoController {
         model.addAttribute("newTodo", new Todo());
         return "add";
     }
+
+    @PostMapping("/search")
+    public String searchInTodo(Model model, @RequestParam(required = false) String search) {
+        model.addAttribute("todos", repo.search(search));
+        return "todolist";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String editTodoList(Model model, @PathVariable long id) {
+        model.addAttribute("todo", repo.findById(id));
+        return "edit";
+    }
+
+    @PostMapping("/edit")
+    public String addEdit(@ModelAttribute Todo todo){
+        repo.save(todo);
+        return "redirect:/";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3 th:style="${stored ? 'color:red;':'color:black;'}" th:text="${message}"></h3>
+
+<form th:action="@{/save-link}" method="post" th:object="${urlAlias}">
+    <h4>URL</h4>
+    <label for=“url”></label>
+    <input id=“url” type=“text” th:field="*{url}">
+    <h4>Alies</h4>
+    <label for=“alies”></label>
+    <input id=“alies” type=“text” th:field="*{alias}">
+    <br>
+    <button type="submit">Login</button>
+
+</form>
+
+</body>
+</html>
