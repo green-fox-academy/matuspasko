@@ -59,24 +59,26 @@ public class BankAccount {
         return str;
     }
 
-    public BankAccount(int index, String name, double balance, String animalType) {
-        this.index = index;
-        this.name = name;
-        this.balance = balance;
-        this.animalType = animalType;
-    }
-
     public BankAccount(String name, double balance, String animalType, int index) {
 
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.index = index;
+
+    }
+
+    public BankAccount(String name, double balance, String animalType, int index,boolean isKing) {
+
+        this.name = name;
+        this.balance = balance;
+        this.animalType = animalType;
+        this.index = index;
         this.isKing = isKing;
     }
 
-    public BankAccount(String simba, double v, String lion, int i, boolean isKing) {
-        this.isKing = isKing;
-    }
+//    public BankAccount(String simba, double v, String lion, int i, boolean isKing) {
+//        this.isKing = isKing;
+//    }
 }
 
