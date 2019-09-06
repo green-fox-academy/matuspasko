@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tourist Information</h1>
+<table>
+    <tr>
+        <td><b>Name</b></td>
+        <td><b>City</b></td>
+        <td><b>Price</b></td>
+        <td><b>Longitude</b></td>
+        <td><b>Latitude</b></td>
+        <td><b>Category</b></td>
+        <td><b>Duration</b></td>
+        <td><b>Recommended age</b></td>
+    </tr>
+
+<tr th:each="attraction : ${attractions}">
+
+    <td th:text="${attraction.name}"></td>
+    <td th:text="${attraction.city}"></td>
+    <td th:text="${attraction.price}"></td>
+    <td th:text="${attraction.longitude}"></td>
+    <td th:text="${attraction.latitude}"></td>
+    <td th:text="${attraction.category}"></td>
+    <td th:text="${attraction.duration}"></td>
+    <td th:text="${attraction.recommendedAge}"></td>
+
+
+</tr>
+</table>
+
+
+
+</body>
+</html>

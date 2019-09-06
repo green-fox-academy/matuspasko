@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Pixam Express</h1>
+
+<a href="/">Order</a>
+<a href="/statistics">Statistics</a>
+
+<h3>Guests favourite</h3>
+
+<ol>
+    <li th:each="pizza : ${topPizzas}" th:text="${pizza}"></li>
+</ol>
+
+</body>
+</html>

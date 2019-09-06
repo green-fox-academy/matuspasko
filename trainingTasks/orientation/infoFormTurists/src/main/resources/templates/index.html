@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Tourist Information</h1>
+
+<table>
+
+    <tr>
+
+        <td><b>Name</b></td>
+        <td><b>City</b></td>
+        <td><b>Price</b></td>
+        <td><b>Longitude</b></td>
+        <td><b>Latitude</b></td>
+        <td><b>Category</b></td>
+        <td><b>Duration</b></td>
+        <td><b>Recommended age</b></td>
+
+    </tr>
+
+    <tr th:each="attraction : ${attractions}">
+
+        <td th:text="${attraction.name}"></td>
+        <td th:text="${attraction.city}"></td>
+        <td th:text="${attraction.price}"></td>
+        <td th:text="${attraction.longitude}"></td>
+        <td th:text="${attraction.latitude}"></td>
+        <td th:text="${attraction.category}"></td>
+        <td th:text="${attraction.duration}"></td>
+        <td th:text="${attraction.recommendedAge}"></td>
+
+
+    </tr>
+
+</table>
+
+
+<h1>Add Attraction</h1>
+
+<!--<p th:if="${projects != null and projects.size() gt 0}"> <a th:href="@{/hire/invite/} + ${f.id}" class="btn waves-effect">Anything</a> </p>-->
+
+
+<form th:action="${addAtraction.id} == null or ${addAtraction.id} == 0 ? '/add ': '/edit/' + ${addAtraction.id}" th:object="${addAtraction}" method="post">
+
+
+
+    Name:
+    <br>
+    <input type="text" name="name" th:field="${addAtraction.name}">
+    <br />
+
+    City:
+    <br>
+    <input type="text" name="city" th:field="${addAtraction.city}">
+    <br />
+
+    Price:
+    <br>
+    <input type="text" name="price" th:field="${addAtraction.price}">
+    <br />
+
+    Longitude:
+    <br>
+    <input type="text" name="longitude" th:field="${addAtraction.longitude}">
+    <br />
+
+    Latitude:
+    <br>
+    <input type="text" name="latitude" th:field="${addAtraction.latitude}">
+    <br />
+
+    Duration:
+    <br>
+    <input type="text" name="duration" th:field="${addAtraction.duration}">
+    <br />
+
+    Recommended age:
+    <br>
+    <input type="text" name="recommendedAge" th:field="${addAtraction.recommendedAge}">
+    <br />
+
+    Category:
+    <br>
+    <input type="text" name="category" th:field="${addAtraction.category}">
+    <br />
+
+    <button type = "submit">Submit</button>
+
+</form>
+
+</body>
+</html>

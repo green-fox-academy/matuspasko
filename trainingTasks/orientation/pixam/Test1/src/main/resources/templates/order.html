@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Pixam Express</h1>
+<span>
+    <a href="/">Order</a>
+    <a href="/statistics">Statistics</a>
+</span>
+<h2 th:text="'Your order' + '(' + ${savedOrder.get().getId()} + ')'"></h2>
+<p th:text="'Name: ' + ${savedOrder.get().name}"></p>
+<p th:text="'Address: ' + ${savedOrder.get().address}"></p>
+<p th:text="'Pizza: ' + ${savedOrder.get().pizza}"></p>
+</body>
+</html>
